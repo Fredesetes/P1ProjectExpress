@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(230, 180, 197);
+}
+
+.formEstudantes {
+    padding: 2em;
+}
+
+.form-id {
+    margin-right: 2em;
+}
+
+label {
+    margin-right: 1em;
+}
+
+.tbEst {
+    padding: 2em;
+}
+
+.btn {
+    margin-left: 2em;
+    background-color: black;
+}
+
+.btn:hover {
+    background-color: green;
+}
+
+.delete:hover {
+    background-color: red;
+}
