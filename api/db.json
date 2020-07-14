@@ -1,3 +1,10 @@
 {
-  "estudantes": []
+  "estudantes": [
+    {
+      "name": "sdg",
+      "id": "6453846",
+      "regime": "sdgs",
+      "turn": "wgsdg"
+    }
+  ]
 }

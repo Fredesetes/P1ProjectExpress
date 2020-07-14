@@ -6,7 +6,7 @@ var path = require('path');
 
 router.post('/', (req, res) => {
     var numero = req.body.id
-
+    z
     if (db.check(numero)) {
         console.log("Já Existe, não é permitido adicionar estudantes com o mesmo numero");
         res.status(400).send("Já Existe, não é permitido adicionar estudantes com o mesmo numero")
