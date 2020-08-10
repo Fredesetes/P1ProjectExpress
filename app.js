@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var estudantes = require('./api/estudantes.js');
+var perguntas = require('./api/perguntas.js')
 var path = require('path');
 
 var app = express();
@@ -8,6 +9,8 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api/estudantes', estudantes);
+
+app.use('/api/perguntas', perguntas);
 
 app.use(express.static(path.join(__dirname, '/html')));
 

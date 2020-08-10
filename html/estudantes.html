@@ -24,12 +24,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Estudantes</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="perguntas.html">Perguntas</a>
+                </li>
             </ul>
         </div>
     </nav>
 
 
-    <form class="formEstudantes form-inline">
+    <form class="formEstudantes">
         <div class="form-group form-id">
             <label for="studentNumber">ID</label>
             <input name="id" type="number" class="form-control" id="studentNumber" placeholder="ID">
@@ -41,28 +44,27 @@
         </div>
 
         <div class="form-group">
-            <label for="studentType">Tipo de Estudante</label>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dropdown button
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </div>
-
+            <label for="studentType">Tipo de estudante</label>
+            <select class="custom-select" id="studentType">
+                <option selected disabled>Tipo de Estudante</option>
+                <option value="1">Normal</option>
+                <option value="2">Trabalhador</option>
+                <option value="3">Extraordinário</option>
+            </select>
         </div>
 
         <div class="form-group ">
             <label for="studentRegime">Regime</label>
-            <input name="regime" type="text" class="form-control" id="studentRegime" placeholder="Regime">
+            <select class="custom-select" id="studentRegime">
+                <option selected disabled>Regime</option>
+                <option value="1">Diurno</option>
+                <option value="2">Pós Laboral</option>
+            </select>
         </div>
 
         <div class="form-group ">
             <label for="studentTurn">Turno</label>
-            <input name="turn" type="text" class="form-control" id="studentTurn" placeholder="Turno">
+            <input name="turn" type="number" class="form-control" id="studentTurn" placeholder="Turno">
         </div>
         <button id="button" type="button" class="btn btn-primary">Submit</button>
     </form>
@@ -85,7 +87,9 @@
             </thead>
 
             <tbody>
-                <div id="mymodal" class="modal" tabindex="-1" role="dialog">
+
+
+                <div id="myModal" class="modal" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -95,39 +99,38 @@
                                 <form class="formEstudantes">
                                     <div class="form-group form-id">
                                         <label for="studentNumber">ID</label>
-                                        <input name="id" type="number" class="form-control studentNumber" placeholder="ID">
+                                        <input name="id" type="number" class="form-control studentNumber" text="">
                                     </div>
 
-                                    <div class="form-group ">
+                                    <div class="form-group">
                                         <label for="studentName">Name</label>
                                         <input name="name" type="text" class="form-control studentName" placeholder="Name">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="studentType">Tipo de Estudante</label>
-                                        <div class="dropdown">
-                                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                              Dropdown button
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-
+                                        <label for="studentType">Tipo de estudante</label>
+                                        <select class="custom-select studentType">
+                                            <option selected disabled>Tipo de Estudante</option>
+                                            <option value="1">Normal</option>
+                                            <option value="2">Trabalhador</option>
+                                            <option value="3">Extraordinário</option>
+                                        </select>
                                     </div>
 
                                     <div class="form-group ">
                                         <label for="studentRegime">Regime</label>
-                                        <input name="regime" type="text" class="form-control studentRegime" placeholder="Regime">
+                                        <select class="custom-select studentRegime">
+                                            <option selected disabled>Regime</option>
+                                            <option value="1">Diurno</option>
+                                            <option value="2">Pós Laboral</option>
+                                        </select>
                                     </div>
 
                                     <div class="form-group ">
                                         <label for="studentTurn">Turno</label>
-                                        <input name="turn" type="text" class="form-control studentTurn" placeholder="Turno">
+                                        <input name="turn" type="number" class="form-control studentTurn" placeholder="Turno">
                                     </div>
-                                    <button type="button" class="btn btn-primary changeBtn">Submit</button>
+                                    <button type="button" id="changeBtn" class="btn btn-primary">Submit</button>
                                 </form>
                             </div>
                         </div>
@@ -139,7 +142,7 @@
     <button id='delete' class='delete btn btn-primary'>Delete All</button>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="./js/popper.min.js"></script>
     <script src="./js/notify.min.js"></script>
     <script src="./js/bootstrap.min.js "></script>
     <script src="./js/estudantesSite.js "></script>

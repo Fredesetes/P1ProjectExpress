@@ -1,0 +1,59 @@
+$.ajax({
+            url: 'http://localhost:3000/api/perguntas/' + id,
+            type: "GET",
+            success: function(result) {
+                respostas = result.respostas
+                if (respostas == null) {
+                    collapse.find(".lista").append("<p>Não tem respostas introduzidas</p>")
+                } else {
+                    collapse.find(".lista").append("<p>Resposta à Pergunta: " + id + "</p>")
+                    respostas.forEach((resposta) => {
+                        collapse.find(".lista").append("<p>" + resposta.id + ": " + resposta.descricao + "</p>")
+                    })
+
+                }
+            }
+        });
+
+
+
+        <div id="changeModal" class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Pergunta a Alterar</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group form-id">
+                                    <label for="studentNumber">ID</label>
+                                    <input name="id" type="number" class="form-control questionDescription" placeholder="ID">
+                                </div>
+                                <div class="form-group form-description">
+                                    <label for="studentName">Descrição</label>
+                                    <input name="descricao" type="text" class="form-control questionDescription" placeholder="Name">
+                                </div>
+                                <div class="form-group form-answers">
+                                    <label>Respostas</label>
+                                    <span id="newAnswer" style="float: right; cursor: pointer; margin-right: 2em;"><i class=" fas fa-plus-square"></i></span>
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+
+
+                    <div class="collapse multi-collapse" id="collapseRespostas">
+                    <div class="card card-body lista">
+                        ksjdbksjdbgjbgs
+
+                    </div>
+                </div>
