@@ -1,0 +1,19 @@
+body {
+  background-color: #b6b6b6;
+}
+
+body main {
+  margin: 2em;
+}
+
+body .formAdd {
+  border-style: groove;
+  border-color: #38b4ca;
+  margin-bottom: 2em;
+  padding: 2em;
+  background-color: #38b4ca;
+  /*.id {
+            
+        }*/
+}
+/*# sourceMappingURL=myStyles.css.map */

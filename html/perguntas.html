@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/myStyles.css">
     <title>Perguntas</title>
 </head>
 
@@ -29,54 +30,83 @@
             </ul>
         </div>
     </nav>
-    <div>
-        <div class="form-group form-id">
-            <label for="studentNumber">ID</label>
-            <input name="id" type="number" class="form-control" id="questionNumber" placeholder="ID">
-        </div>
-
-        <div class="form-group form-description">
-            <label for="studentName">Descrição</label>
-            <input name="descricao" type="text" class="form-control" id="questionDescription" placeholder="Name">
-        </div>
-
-        <div class="form-group form-answer">
-            <label>Respostas</label>
-            <span id="newAnswer" style="float: right; cursor: pointer; margin-right: 2em;"><i class=" fas fa-plus-square"></i></span>
-            <div>
-                <table class="table" id="tabelaRespostas">
-                    <tbody>
-
-                    </tbody>
-                </table>
+    <main>
+        <form class="formAdd">
+            <div class="form-group form-id">
+                <label class='id' for="studentNumber">ID</label>
+                <input name="id" type="number" class="form-control" id="questionNumber" placeholder="ID">
             </div>
-        </div>
-    </div>
 
-    <button id="button" type="button" class="btn btn-primary">Submit</button>
-
-    <div class="container" id="showQuestions">
-        <div class="row">
-            <div class="col-sm">
-                <p>Number</p>
+            <div class="form-group form-description">
+                <label for="studentName">Descrição</label>
+                <input name="descricao" type="text" class="form-control" id="questionDescription" placeholder="Name">
             </div>
-            <div class="col-sm">
-                Description
+
+            <div class="form-group form-answer">
+                <label>Respostas</label>
+                <button id="newAnswer" style="float: right; cursor: pointer; margin-right: 2em;"><i class=" fas fa-plus-square"></i></button>
+                <div>
+                    <table class="table" id="tabelaRespostas">
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <div class="col-sm" style="text-align: center;">
-                Options
-            </div>
-        </div>
 
 
-    </div>
+            <button id="button" type="button" class="btn btn-primary">Submit</button>
+        </form>
 
-    <div class="collapse collapseRespostas">
-        <div class="card card-body lista">
-            ksjdbksjdbgjbgs
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Descrição</th>
+                    <th colspan="3">Opções</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaPerguntas">
+                <div class="modal" id="modalChange" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Resposta a Alterar</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="formChange">
+                                    <div class="form-group form-id">
+                                        <label for="studentNumber">ID</label>
+                                        <input name="id" type="number" class="form-control questionNumber" placeholder="ID">
+                                    </div>
 
-        </div>
-    </div>
+                                    <div class="form-group form-description">
+                                        <label for="studentName">Descrição</label>
+                                        <input name="descricao" type="text" class="form-control questionDescription" placeholder="Name">
+                                    </div>
+                                    <div class="form-group form-answer">
+                                        <label>Respostas</label>
+
+                                        <button type="button" class="btn newAnswerChange" style="float: right;"><i class="fas fa-plus-square"></i></button>
+
+                                        <div class="answers">
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary saveChanges">Guardar Alterações</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </tbody>
+        </table>
+    </main>
     <script src="https://code.jquery.com/jquery-3.5.1.js " integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin=" anonymous "></script>
     <script src="./js/popper.min.js "></script>
     <script src="./js/notify.min.js "></script>
