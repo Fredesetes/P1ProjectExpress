@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/formEstudantes.css">
+    <link rel="stylesheet" href="./css/estudanteStyles.css">
+
     <title>Estudantes</title>
 </head>
 
@@ -31,116 +32,118 @@
         </div>
     </nav>
 
+    <main>
 
-    <form class="formEstudantes">
-        <div class="form-group form-id">
-            <label for="studentNumber">ID</label>
-            <input name="id" type="number" class="form-control" id="studentNumber" placeholder="ID">
-        </div>
 
-        <div class="form-group ">
-            <label for="studentName">Name</label>
-            <input name="name" type="text" class="form-control" id="studentName" placeholder="Name">
-        </div>
+        <form class="formEstudantes formAdd">
+            <div class="form-group form-id">
+                <label for="studentNumber">ID</label>
+                <input name="id" type="number" class="form-control" id="studentNumber" placeholder="ID">
+            </div>
 
-        <div class="form-group">
-            <label for="studentType">Tipo de estudante</label>
-            <select class="custom-select" id="studentType">
+            <div class="form-group ">
+                <label for="studentName">Name</label>
+                <input name="name" type="text" class="form-control" id="studentName" placeholder="Name">
+            </div>
+
+            <div class="form-group">
+                <label for="studentType">Tipo de estudante</label>
+                <select class="custom-select" id="studentType">
                 <option selected disabled>Tipo de Estudante</option>
                 <option value="1">Normal</option>
                 <option value="2">Trabalhador</option>
                 <option value="3">Extraordinário</option>
             </select>
-        </div>
+            </div>
 
-        <div class="form-group ">
-            <label for="studentRegime">Regime</label>
-            <select class="custom-select" id="studentRegime">
+            <div class="form-group ">
+                <label for="studentRegime">Regime</label>
+                <select class="custom-select" id="studentRegime">
                 <option selected disabled>Regime</option>
                 <option value="1">Diurno</option>
                 <option value="2">Pós Laboral</option>
             </select>
-        </div>
+            </div>
 
-        <div class="form-group ">
-            <label for="studentTurn">Turno</label>
-            <input name="turn" type="number" class="form-control" id="studentTurn" placeholder="Turno">
-        </div>
-        <button id="button" type="button" class="btn btn-primary">Submit</button>
-    </form>
-
-
-    <!--<div class="alert alert-success">Coreu bem</div>-->
+            <div class="form-group ">
+                <label for="studentTurn">Turno</label>
+                <input name="turn" type="number" class="form-control" id="studentTurn" placeholder="Turno">
+            </div>
+            <button id="button" type="button" class="btn btn-primary">Submit</button>
+        </form>
 
 
-    <div class="tbEst">
-        <table class="table" id="tabelaEstudantes">
-            <thead>
-                <tr>
-                    <th>Número</th>
-                    <th>Nome</th>
-                    <th>Tipo</th>
-                    <th>Regime</th>
-                    <th>Turno</th>
-                    <th>Options</th>
-                </tr>
-            </thead>
-
-            <tbody>
+        <!--<div class="alert alert-success">Coreu bem</div>-->
 
 
-                <div id="myModal" class="modal" tabindex="-1" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Change a Student</h5>
-                            </div>
-                            <div class="modal-body">
-                                <form class="formEstudantes">
-                                    <div class="form-group form-id">
-                                        <label for="studentNumber">ID</label>
-                                        <input name="id" type="number" class="form-control studentNumber" text="">
-                                    </div>
+        <div class="tbEst">
+            <table class="table table-dark" id="tabelaEstudantes">
+                <thead>
+                    <tr>
+                        <th>Número</th>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Regime</th>
+                        <th>Turno</th>
+                        <th colspan="2">Options <button style="float: right;" id='delete' class='delete btn-sm btn-primary'>Delete All</button>
+                        </th>
+                    </tr>
+                </thead>
 
-                                    <div class="form-group">
-                                        <label for="studentName">Name</label>
-                                        <input name="name" type="text" class="form-control studentName" placeholder="Name">
-                                    </div>
+                <tbody>
 
-                                    <div class="form-group">
-                                        <label for="studentType">Tipo de estudante</label>
-                                        <select class="custom-select studentType">
+
+                    <div id="myModal" class="modal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Change a Student</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="formEstudantes">
+                                        <div class="form-group form-id">
+                                            <label for="studentNumber">ID</label>
+                                            <input name="id" type="number" class="form-control studentNumber" text="">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="studentName">Name</label>
+                                            <input name="name" type="text" class="form-control studentName" placeholder="Name">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="studentType">Tipo de estudante</label>
+                                            <select class="custom-select studentType">
                                             <option selected disabled>Tipo de Estudante</option>
                                             <option value="1">Normal</option>
                                             <option value="2">Trabalhador</option>
                                             <option value="3">Extraordinário</option>
                                         </select>
-                                    </div>
+                                        </div>
 
-                                    <div class="form-group ">
-                                        <label for="studentRegime">Regime</label>
-                                        <select class="custom-select studentRegime">
+                                        <div class="form-group ">
+                                            <label for="studentRegime">Regime</label>
+                                            <select class="custom-select studentRegime">
                                             <option selected disabled>Regime</option>
                                             <option value="1">Diurno</option>
                                             <option value="2">Pós Laboral</option>
                                         </select>
-                                    </div>
+                                        </div>
 
-                                    <div class="form-group ">
-                                        <label for="studentTurn">Turno</label>
-                                        <input name="turn" type="number" class="form-control studentTurn" placeholder="Turno">
-                                    </div>
-                                    <button type="button" id="changeBtn" class="btn btn-primary">Submit</button>
-                                </form>
+                                        <div class="form-group ">
+                                            <label for="studentTurn">Turno</label>
+                                            <input name="turn" type="number" class="form-control studentTurn" placeholder="Turno">
+                                        </div>
+                                        <button type="button" id="changeBtn" class="btn btn-primary">Submit</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </tbody>
-        </table>
-    </div>
-    <button id='delete' class='delete btn btn-primary'>Delete All</button>
-
+                </tbody>
+            </table>
+        </div>
+    </main>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/notify.min.js"></script>

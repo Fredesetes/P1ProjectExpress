@@ -2,8 +2,8 @@
     "version": 3,
     "mappings": "AAAA,AAAA,IAAI,CAAC;EACD,gBAAgB,EAAE,OAA0B;CAc/C;;AAfD,AAEI,IAFA,CAEA,IAAI,CAAC;EACD,MAAM,EAAE,GAAG;CACd;;AAJL,AAKI,IALA,CAKA,QAAQ,CAAC;EACL,YAAY,EAAE,MAAM;EACpB,YAAY,EAAE,OAAiB;EAC/B,aAAa,EAAE,GAAG;EAClB,OAAO,EAAE,GAAG;EACZ,gBAAgB,EAAE,OAAiB;EACnC;;WAEG;CACN",
     "sources": [
-        "myStyles.scss"
+        "perguntaStyles.scss"
     ],
     "names": [],
-    "file": "myStyles.css"
+    "file": "perguntaStyles.css"
 }

@@ -46,6 +46,19 @@ $(function() {
 
     })
 
+    $("#delete").click(function() {
+        console.log("Pressed");
+        $.ajax({
+            url: 'http://localhost:3000/api/estudantes/',
+            type: "DELETE",
+            success: function(result) {
+                $.notify(result, "success");
+                tabela.html("")
+            }
+        })
+    })
+
+
     //Remove UM Estudante
     tabela.on("click", ".del", function() {
         let rowRemove = $(this).closest("tr");

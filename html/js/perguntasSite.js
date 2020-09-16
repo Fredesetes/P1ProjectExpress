@@ -41,7 +41,7 @@ $(function() {
             })
         })
         if ($("#questioNumber").val() == "" || $("#questionDescription").val() == "") {
-            $.notify("Impossível adicionar aluno", "warn");
+            $.notify("Impossível adicionar pergunta", "warn");
         } else {
             let pergunta = {
                 id: $("#questionNumber").val(),
@@ -49,9 +49,12 @@ $(function() {
                 respostas: resp
             };
             $.post('http://localhost:3000/api/perguntas', pergunta, function(data) {
-                $.notify(data, "success");
-                adicionarQuestao(pergunta);
-            })
+                    $.notify(data, "success");
+                    adicionarQuestao(pergunta);
+                })
+                .fail(function() {
+                    $.notify("Impossível adicionar pergunta", "warn")
+                })
             $("#questionNumber").val("");
             $("#questionDescription").val("");
         }
@@ -79,6 +82,7 @@ $(function() {
 
     })
 
+    //Botão Adiciona Respostas no Modal
     $('.newAnswerChange').click(function() {
         if (len < 4) {
             let input = `<input type="text" class="form-control answerChange">`
@@ -89,9 +93,9 @@ $(function() {
         }
     })
 
+    //Butao Guarda Alterações
     $('.saveChanges').click(function() {
         let elements = $(".answerChange")
-        console.log(elements);
         let resp = []
         elements.each((i, element) => {
             resp.push({
@@ -116,7 +120,6 @@ $(function() {
             }
         })
         modalChange.modal('hide')
-        console.log(pergunta);
     })
 
 
@@ -155,7 +158,7 @@ $(function() {
             tdRespostas = "<td colspan='3'>";
             for (let index = 0; index < pergunta.respostas.length; index++) {
                 tdRespostas += `<p class='resposta${index}' number='${pergunta.respostas[index].id}' descricao='${pergunta.respostas[index].descricao}'>${pergunta.respostas[index].id}: ${pergunta.respostas[index].descricao} </p>`
-                console.log(pergunta.respostas[index].descricao);
+
             }
             tdRespostas += "</td>"
 
